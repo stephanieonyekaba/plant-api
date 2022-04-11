@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
-
+const { Schema, model } = mongoose
 const plantSchema = new mongoose.Schema(
 	{
-		name: {
+		img: {
 			type: String,
 			required: true,
 		},
@@ -10,14 +10,14 @@ const plantSchema = new mongoose.Schema(
 			type: Number,
 			required: true,
 		},
-		spikey: {
+		flowers: {
             type: Boolean,
             required: true
         },
 		owner: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User',
-			required: true,
+			required: false,
 		},
 	},
 	{
